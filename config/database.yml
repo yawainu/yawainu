@@ -8,11 +8,11 @@ default: &default
 
 development:
   <<: *default
-  database: yawainu_development
+  database: prof_development
 
 test:
   <<: *default
-  database: yawainu_test
+  database: prof_test
 
 production:
   <<: *default
