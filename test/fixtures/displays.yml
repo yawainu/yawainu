@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cover: false
+  gallery: false
+  work: false
+  contact: false
+  user_id: 
+
+two:
+  cover: false
+  gallery: false
+  work: false
+  contact: false
+  user_id: 
