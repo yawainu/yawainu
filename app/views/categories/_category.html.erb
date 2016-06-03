@@ -3,7 +3,7 @@
   <td><% if category.app_flag %>表示<% else %>非表示<% end %></td>
   <td>
     <%= link_to "登録", user_category_galleries_path(:user_id => category.user, :category_id => category), {:class => "btn btn-info"} %>
-    <%= link_to "編集", edit_user_category_path(:user_id => category.user, :id => category), {:class => "btn btn-success"} %>
+    <%= link_to "編集", edit_user_category_path(id: category), {:class => "btn btn-success"} %>
     <%= link_to '削除', [category.user, category], method: :delete, :class => "btn btn-danger", data: {confirm: "削除しますか？"} %>
   </td>
 </tr>

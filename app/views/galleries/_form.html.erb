@@ -1,0 +1,11 @@
+<% provide(:back_link, user_category_galleries_path(@user,@category)) %>
+
+<%= bootstrap_form_for([@user, @category, @galleries]) do |f| %>
+  <%= f.text_field :title %>
+  <%= f.file_field :image %>
+  <%= f.select :app_flag, [["表示", 1], ["非表示", 0]] %>
+
+  <hr>
+  <%= f.submit '追加', class: "btn btn-primary form-submit-btn" %>
+
+<% end %>
