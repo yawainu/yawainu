@@ -1,5 +1,6 @@
 module ApplicationHelper
 
+  # meta tag
   def default_meta_tags
     {
       title:       "Title",
@@ -19,6 +20,15 @@ module ApplicationHelper
         locale: "ja_JP"
       }
     }
+  end
+
+  # page title
+  def make_title(page_title = '')
+    if page_title.empty?
+      'prtfolio maker'
+    else
+      page_title
+    end
   end
 
 end

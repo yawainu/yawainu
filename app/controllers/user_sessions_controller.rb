@@ -2,12 +2,12 @@ class UserSessionsController < ApplicationController
   skip_before_filter :require_login, except: [:destroy]
 
   def new
+    # ログイン画面
     @user = User.new
   end
 
   def create
     if @user = login(params[:email], params[:password])
-      #redirect_back_or_to(:user_info, notice: 'Login successful')
       redirect_to(user_info_path(@user), notice: 'Login successful')
     else
       flash.now[:alert] = 'Login failed'

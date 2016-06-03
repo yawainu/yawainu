@@ -4,20 +4,25 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
+    # あとで消す
     @users = User.all
   end
 
   # GET /users/1
   def show
+    # ユーザごとのポートフォリオ
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
   def new
+    # 新規登録画面
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
+    # 編集画面
   end
 
   # POST /users
@@ -25,7 +30,13 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to :users, notice: 'User was successfully created.'
+
+      # Userと1:1なので空を作っておく
+      @user.create_cover()
+      @user.create_display()
+      @user.create_user_info()
+
+      redirect_to(user_info_path(@user), notice: 'User was successfully created.')
     else
       render :new
     end
