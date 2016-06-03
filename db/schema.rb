@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20160602195723) do
   add_index "categories", ["user_id"], name: "index_categories_on_user_id", using: :btree
 
   create_table "covers", force: :cascade do |t|
-    t.boolean  "app_flag",           limit: 1
     t.integer  "user_id",            limit: 4
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
