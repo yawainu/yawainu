@@ -1,0 +1,17 @@
+<% provide(:title, "ユーザ情報変更") %>
+<% provide(:back_link, user_info_path(params[:id])) %>
+
+<%= bootstrap_form_for(@user_info) do |f| %>
+
+  <%= f.text_area :comment %>
+  <%= f.text_field :main_color %>
+  <%= f.text_field :sub_color %>
+  <%= f.file_field :image %>
+
+  <hr>
+  <%= f.submit '変更', class: "btn btn-primary form-submit-btn" %>
+
+<% end %>
+
+
+

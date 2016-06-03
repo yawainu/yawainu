@@ -1,0 +1,17 @@
+<% provide(:title, "仕事履歴") %>
+<% provide(:back_link, user_info_path(@user)) %>
+
+<table class="table table-striped">
+  <tr>
+    <th>start</th>
+    <th>end</th>
+    <th>comment</th>
+    <th>app</th>
+    <th></th>
+  </tr>
+
+  <%= render @works %>
+
+</table>
+<hr>
+<%= link_to "追加", new_user_work_path, class: "btn btn-default btn-block" %>

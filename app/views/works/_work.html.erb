@@ -1,0 +1,10 @@
+<tr>
+  <td><%= work.start_date %></td>
+  <td><%= work.end_date %></td>
+  <td><%= work.comment %></td>
+  <td><% if work.app_flag %>表示<% else %>非表示<% end %></td>
+  <td>
+    <%= link_to "編集", edit_user_work_path(:user_id => work.user, :id => work), {:class => "btn btn-success"} %>
+    <%= link_to '削除', [work.user, work], method: :delete, :class => "btn btn-danger", data: {confirm: "削除しますか？"} %>
+  </td>
+</tr>

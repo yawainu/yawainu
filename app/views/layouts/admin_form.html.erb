@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Yawainu</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= display_meta_tags(default_meta_tags) %>
+</head>
+<body>
+
+  <%= render 'shared/navlink' %>
+  <%= render 'shared/flash' %>
+
+  <div class="panel panel-default admin-panel">
+    <div class="panel-heading">
+      <h1><%= make_title(yield(:title)) %></h1>
+    </div>
+
+    <div class="panel-body">
+      <%= yield %>
+    </div>
+    <div class="panel-footer">
+      <%= link_to "戻る", make_back_link(yield(:back_link)), class: "btn btn-default" %>
+    </div>
+
+  </div>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</body>
+</html>

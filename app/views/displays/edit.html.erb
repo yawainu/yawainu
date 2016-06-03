@@ -1,0 +1,14 @@
+<% provide(:title, "表示設定") %>
+<% provide(:back_link, user_info_path(params[:id])) %>
+
+<%= bootstrap_form_for(@display) do |f| %>
+
+  <%= f.select :cover, [["表示", 1], ["非表示", 0]] %>
+  <%= f.select :gallery, [["表示", 1], ["非表示", 0]] %>
+  <%= f.select :work, [["表示", 1], ["非表示", 0]] %>
+  <%= f.select :contact, [["表示", 1], ["非表示", 0]] %>
+
+  <hr>
+  <%= f.submit '変更', class: "btn btn-primary form-submit-btn" %>
+
+<% end %>
