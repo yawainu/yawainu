@@ -31,4 +31,13 @@ module ApplicationHelper
     end
   end
 
+  # back link
+  def make_back_link(page_link = '')
+    if page_link.empty?
+      '/'
+    else
+      page_link
+    end
+  end
+
 end
