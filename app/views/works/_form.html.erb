@@ -1,4 +1,4 @@
-<% provide(:back_link, user_works_path(params[:id])) %>
+<% provide(:back_link, user_works_path(@user)) %>
 
 <%= bootstrap_form_for([@user,@work]) do |f| %>
   <%= f.date_field :start_date %>

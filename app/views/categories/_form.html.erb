@@ -1,0 +1,9 @@
+<% provide(:back_link, user_categories_path(@user)) %>
+
+<%= bootstrap_form_for([@user,@categories]) do |f| %>
+  <%= f.text_field :title %>
+  <%= f.select :app_flag, [["表示", 1], ["非表示", 0]] %>
+  <hr>
+  <%= f.submit '追加', class: "btn btn-primary form-submit-btn" %>
+
+<% end %>

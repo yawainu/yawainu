@@ -1,5 +1,16 @@
-<% provide(:title, "ギャラリーカテゴリー") %>
-<% provide(:back_link, "/user_infos/#{params[:user_id]}") %>
+<% provide(:title, "ギャラリー") %>
+<% provide(:back_link, user_info_path(@user)) %>
 
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h2>カテゴリ</h2>
+<table class="table table-striped">
+  <tr>
+    <th>category</th>
+    <th>entry</th>
+    <th></th>
+  </tr>
+
+  <%= render @categories %>
+
+</table>
+<hr>
+<%= link_to "追加", new_user_category_path, class: "btn btn-default btn-block" %>
