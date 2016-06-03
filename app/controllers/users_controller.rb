@@ -2,16 +2,17 @@ class UsersController < ApplicationController
   skip_before_filter :require_login, only: [:new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  # GET /users
-  def index
-    # あとで消す
-    @users = User.all
-  end
-
   # GET /users/1
   def show
     # ユーザごとのポートフォリオ
-    @user = User.find(params[:id])
+
+    @user_info = @user.user_info
+    @display   = @user.display
+    @cover     = @user.cover
+    @categories= @user.categories
+    @work      = @user.works
+
+    render :layout => 'portfolio'
   end
 
   # GET /users/new

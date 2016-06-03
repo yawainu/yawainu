@@ -1,7 +1,67 @@
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<header>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <h1><a class="navbar-brand" href="#">yawainu</a></h1>
+      </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#profile">profile</a></li>
+          <li><a href="#gallery">garelly</a></li>
+          <li><a href="#works">works</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- cover -->
+<%  if @display.cover %>
+  <%= render 'cover' %>
+<% end %>
+
+<section class="main-wrap">
+
+  <section id="profile" class="container-fluid profile">
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-2">
+        <%= image_tag @user_info.image.url(:medium), class: "img-responsive img-circle profile__icon" %>
+      </div>
+      <div class="col-sm-6">
+        <div class="profile__text">
+          <%= @user_info.comment %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- gallery -->
+  <%  if @display.gallery %>
+    <%= render 'gallery' %>
+  <% end %>
+
+  <!-- work -->
+  <%  if @display.work %>
+    <%= render 'work' %>
+  <% end %>
+
+</section>
+
+<footer>
+  <!-- contact -->
+  <%  if @display.contact %>
+    <%= render 'contact' %>
+  <% end %>
+
+  <section class="copyright text-center">
+    <small>Copyright (C) 2016 yawainu.com All Rights Reserved.</small>
+  </section>
+</footer>

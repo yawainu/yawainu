@@ -1,0 +1,12 @@
+<section id="works" class="container works">
+  <h2>WORKS</h2>
+
+  <div class="row">
+    <% @work.where("app_flag = 1").each do |work| %>
+      <div class="col-sm-4 col-md-3 works__date"><%= work.start_date %> ~ <%= work.end_date %></div>
+      <div class="col-sm-8 col-md-9 works__text"><%= work.comment %></div>
+    <% end %>
+  </div>
+</section>
+
+<hr class="no-border">
