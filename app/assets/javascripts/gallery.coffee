@@ -6,4 +6,4 @@ $ ->
 
   $galleryBtn.on 'click', (e) ->
     $galleryModal.find('h4').html($(this).data('title'))
-    $galleryModal.find('p').html($(this).data('comment'))
+    $galleryModal.find('img').attr('src',$(this).data('image'))

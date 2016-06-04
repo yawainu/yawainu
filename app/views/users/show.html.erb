@@ -30,7 +30,7 @@
 
 <section class="main-wrap">
 
-  <section id="profile" class="container-fluid profile">
+  <section id="profile" class="container-fluid profile" style="background-color: <%= @user_info.main_color %>">
     <div class="row">
       <div class="col-sm-offset-2 col-sm-2">
         <%= image_tag @user_info.image.url(:medium), class: "img-responsive img-circle profile__icon" %>

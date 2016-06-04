@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @categories= @user.categories
     @work      = @user.works
 
-    render :layout => 'portfolio'
+    render :layout => 'portforio'
   end
 
   # GET /users/new
