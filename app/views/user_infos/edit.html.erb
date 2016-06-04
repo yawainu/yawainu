@@ -3,7 +3,8 @@
 
 <%= bootstrap_form_for(@user_info) do |f| %>
 
-  <%= f.text_area :comment %>
+  <%= f.text_field :title %>
+  <%= f.text_area  :comment %>
   <%= f.text_field :main_color %>
   <%= f.text_field :sub_color %>
   <%= f.file_field :image %>

@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(version: 20160602195723) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "title",      limit: 255
-    t.boolean  "app_flag",   limit: 1
+    t.boolean  "app_flag",   limit: 1,   default: false
     t.integer  "user_id",    limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
   add_index "categories", ["user_id"], name: "index_categories_on_user_id", using: :btree
@@ -36,23 +36,23 @@ ActiveRecord::Schema.define(version: 20160602195723) do
   add_index "covers", ["user_id"], name: "index_covers_on_user_id", using: :btree
 
   create_table "displays", force: :cascade do |t|
-    t.boolean  "cover",      limit: 1
-    t.boolean  "gallery",    limit: 1
-    t.boolean  "work",       limit: 1
-    t.boolean  "contact",    limit: 1
+    t.boolean  "cover",      limit: 1, default: false
+    t.boolean  "gallery",    limit: 1, default: false
+    t.boolean  "work",       limit: 1, default: false
+    t.boolean  "contact",    limit: 1, default: false
     t.integer  "user_id",    limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   add_index "displays", ["user_id"], name: "index_displays_on_user_id", using: :btree
 
   create_table "galleries", force: :cascade do |t|
     t.string   "title",              limit: 255
-    t.boolean  "app_flag",           limit: 1
+    t.boolean  "app_flag",           limit: 1,   default: false
     t.integer  "category_id",        limit: 4
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size",    limit: 4
@@ -62,12 +62,13 @@ ActiveRecord::Schema.define(version: 20160602195723) do
   add_index "galleries", ["category_id"], name: "index_galleries_on_category_id", using: :btree
 
   create_table "user_infos", force: :cascade do |t|
+    t.string   "title",              limit: 255,   default: "site title"
     t.text     "comment",            limit: 65535
-    t.string   "main_color",         limit: 255
-    t.string   "sub_color",          limit: 255
+    t.string   "main_color",         limit: 255,   default: "#212121"
+    t.string   "sub_color",          limit: 255,   default: "#212121"
     t.integer  "user_id",            limit: 4
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size",    limit: 4
@@ -90,10 +91,10 @@ ActiveRecord::Schema.define(version: 20160602195723) do
     t.date     "start_date"
     t.date     "end_date"
     t.string   "comment",    limit: 255
-    t.boolean  "app_flag",   limit: 1
+    t.boolean  "app_flag",   limit: 1,   default: false
     t.integer  "user_id",    limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
   add_index "works", ["user_id"], name: "index_works_on_user_id", using: :btree
