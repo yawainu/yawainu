@@ -3,7 +3,7 @@ class Cover < ActiveRecord::Base
 
   has_attached_file :image, url: "/system/:class/:attachment/:id_partition/:style/:hash.:extension",
                             hash_secret: "longSecretString",
-                            default_url:  "/public/images/dummy_cover.png"
+                            default_url:  "/images/dummy_cover.png"
 
   validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
                                less_than: 5.megabytes
