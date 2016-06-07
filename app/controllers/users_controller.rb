@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
-  skip_before_filter :require_login, only: [:new, :create]
+  skip_before_filter :require_login, only: [:show, :new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users/1
   def show
     # ユーザごとのポートフォリオ
-
     @user_info = @user.user_info
     @display   = @user.display
     @cover     = @user.cover
@@ -19,6 +18,7 @@ class UsersController < ApplicationController
   def new
     # 新規登録画面
     @user = User.new
+    render :layout => 'admin_form'
   end
 
   # GET /users/1/edit
@@ -61,7 +61,10 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      id = 1
+      id unless params[:id] == nil
+
+      @user = User.find(id)
     end
 
     def user_params

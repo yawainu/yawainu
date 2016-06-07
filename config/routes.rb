@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  root :to => 'user_sessions#new'
-
   resources :user_sessions, only:[:new, :create, :destroy]
   resources :user_infos,    only:[:show, :edit, :update]
   resources :covers,        only:[:edit, :update]
@@ -14,6 +12,9 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'login'   => 'user_sessions#new',     :as => :login
+  root :to => 'users#show'
+
+  get  'login'  => 'user_sessions#new',    :as => :login
+  get  'admin'  => 'user_sessions#new',    :as => :admin
   post 'logout' => 'user_sessions#destroy', :as => :logout
 end

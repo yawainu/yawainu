@@ -1,31 +1,11 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<% provide(:back_link, login_path) %>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= bootstrap_form_for(@user) do |f| %>
+  <%= f.text_field :email %>
+  <%= f.password_field :password %>
+  <%= f.password_field :password_confirmation %>
 
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
+  <hr>
+  <%= f.submit '追加', class: "btn btn-primary form-submit-btn" %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-     <%= f.label :password_confirmation %><br />
-     <%= f.password_field :password_confirmation %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
