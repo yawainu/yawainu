@@ -1,0 +1,28 @@
+<header>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <h1>
+          <% if @user.id %>
+            <%= link_to "portforio maker", user_info_path(@user), class: "navbar-brand" %>
+          <% else %>
+            <span class='navbar-brand'>portforio maker</span>
+          <% end %>
+        </h1>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <% if @user.id %>
+          <%= link_to "LOGOUT", logout_path, method: :post, class: "btn btn-default navbar-btn pull-right" %>
+          <%= link_to "PORTFORIO PAGE", user_path(@user), class: "btn btn-primary navbar-btn pull-right" %>
+        <% end %>
+      </div>
+    </div>
+  </nav>
+</header>
