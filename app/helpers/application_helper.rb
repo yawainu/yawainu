@@ -34,7 +34,7 @@ module ApplicationHelper
   # back link
   def make_back_link(page_link = '')
     if page_link.empty?
-      '/'
+      user_info_path(@user)
     else
       page_link
     end

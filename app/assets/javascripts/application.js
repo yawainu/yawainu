@@ -4,8 +4,11 @@
 //= require turbolinks
 //
 // vender
-//= require slidebars.min
+//= require moment
+//= require bootstrap-datetimepicker
 //
 // assets
 //= require gallery
-
+//= require profile
+//= require form
+//= require alert

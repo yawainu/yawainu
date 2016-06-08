@@ -6,22 +6,30 @@
   <%= csrf_meta_tags %>
   <%= display_meta_tags(default_meta_tags) %>
 </head>
-<body>
+<body id="admin-wrap">
 
-  <%= render 'shared/navlink' %>
-  <%= render 'shared/flash' %>
+  <%= render 'shared/header' %>
 
-  <div class="panel panel-default admin-panel">
-    <div class="panel-heading">
-      <h1><%= make_title(yield(:title)) %></h1>
+  <div class="container">
+
+    <%= render 'shared/flash' %>
+
+    <div class="panel panel-default admin-panel">
+      <div class="panel-heading">
+        <h1><%= make_title(yield(:title)) %></h1>
+      </div>
+
+      <div class="panel-body">
+        <%= yield %>
+      </div>
+
+
+
     </div>
-
-    <div class="panel-body">
-      <%= yield %>
-    </div>
-
   </div>
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
+
+

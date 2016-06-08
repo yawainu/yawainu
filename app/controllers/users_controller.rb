@@ -59,14 +59,6 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      id = 1
-      id unless params[:id] == nil
-
-      @user = User.find(id)
-    end
-
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation)
     end

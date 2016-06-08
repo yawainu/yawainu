@@ -1,12 +1,12 @@
 class DisplaysController < ApplicationController
-  layout "admin_form"
+  before_action :set_user
 
   def edit
-    @display = User.find(params[:id]).display
+    @display = @user.display
   end
 
   def update
-    @display = User.find(params[:id]).display
+    @display = @user.display
 
     if @display.update(display_params)
       redirect_to user_info_path(params[:id]), notice: '更新しました'

@@ -1,12 +1,12 @@
 class CoversController < ApplicationController
-  layout "admin_form"
+  before_action :set_user
 
   def edit
-    @cover = User.find(params[:id]).cover
+    @cover = @user.cover
   end
 
   def update
-    @cover = User.find(params[:id]).cover
+    @cover = @user.cover
 
     if @cover.update(cover_params)
       redirect_to user_info_path(params[:id]), notice: '更新しました'

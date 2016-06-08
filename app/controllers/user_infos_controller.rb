@@ -1,19 +1,18 @@
 class UserInfosController < ApplicationController
-  layout "admin_form"
+  before_action :set_user
 
   def show
     # admin画面
-    @user      = User.find(params[:id])
     @user_info = @user.user_info
   end
 
   def edit
     # ユーザ情報編集
-    @user_info = User.find(params[:id]).user_info
+    @user_info = @user.user_info
   end
 
   def update
-    @user_info = User.find(params[:id]).user_info
+    @user_info = @user.user_info
 
     if @user_info.update(user_info_params)
       redirect_to user_info_path(params[:id]), notice: '更新しました'
