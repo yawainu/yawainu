@@ -3,10 +3,10 @@
 
 <%= bootstrap_form_for(@display) do |f| %>
 
-  <%= f.select :cover, [["表示", 1], ["非表示", 0]] %>
-  <%= f.select :gallery, [["表示", 1], ["非表示", 0]] %>
-  <%= f.select :work, [["表示", 1], ["非表示", 0]] %>
-  <%= f.select :contact, [["表示", 1], ["非表示", 0]] %>
+  <%= f.select :cover,   [["表示", true], ["非表示", false]], selected: @display.cover %>
+  <%= f.select :gallery, [["表示", true], ["非表示", false]], selected: @display.gallery %>
+  <%= f.select :work,    [["表示", true], ["非表示", false]], selected: @display.work %>
+  <%= f.select :contact, [["表示", true], ["非表示", false]], selected: @display.contact %>
 
   <hr>
   <%= f.submit '変更', class: "btn btn-primary form-submit-btn" %>

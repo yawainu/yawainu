@@ -18,7 +18,6 @@ class UsersController < ApplicationController
   def new
     # 新規登録画面
     @user = User.new
-    render :layout => 'admin_form'
   end
 
   # GET /users/1/edit
