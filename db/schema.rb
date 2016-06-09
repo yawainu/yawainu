@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(version: 20160602195723) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "title",      limit: 255
-    t.boolean  "app_flag",   limit: 1,   default: false
+    t.boolean  "app_flag",   limit: 1,   default: true
     t.integer  "user_id",    limit: 4
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   add_index "categories", ["user_id"], name: "index_categories_on_user_id", using: :btree
@@ -49,10 +49,10 @@ ActiveRecord::Schema.define(version: 20160602195723) do
 
   create_table "galleries", force: :cascade do |t|
     t.string   "title",              limit: 255
-    t.boolean  "app_flag",           limit: 1,   default: false
+    t.boolean  "app_flag",           limit: 1,   default: true
     t.integer  "category_id",        limit: 4
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size",    limit: 4
@@ -91,10 +91,10 @@ ActiveRecord::Schema.define(version: 20160602195723) do
     t.date     "start_date"
     t.date     "end_date"
     t.string   "comment",    limit: 255
-    t.boolean  "app_flag",   limit: 1,   default: false
+    t.boolean  "app_flag",   limit: 1,   default: true
     t.integer  "user_id",    limit: 4
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   add_index "works", ["user_id"], name: "index_works_on_user_id", using: :btree

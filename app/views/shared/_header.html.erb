@@ -12,7 +12,7 @@
           <% if @user.id %>
             <%= link_to "portforio maker", user_info_path(@user), class: "navbar-brand" %>
           <% else %>
-            <span class='navbar-brand'>portforio maker</span>
+            <%= link_to "portforio maker", login_path, class: "navbar-brand" %>
           <% end %>
         </h1>
       </div>
@@ -21,6 +21,8 @@
         <% if @user.id %>
           <%= link_to "LOGOUT", logout_path, method: :post, class: "btn btn-default navbar-btn pull-right" %>
           <%= link_to "PORTFORIO PAGE", user_path(@user), class: "btn btn-primary navbar-btn pull-right" %>
+        <% else %>
+          <%= link_to "SIGNUP", new_user_path, class: "btn btn-primary navbar-btn pull-right" %>
         <% end %>
       </div>
     </div>
