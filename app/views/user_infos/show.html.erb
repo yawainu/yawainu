@@ -1,4 +1,4 @@
-<% @none_back = true %>
+<% provide(:back_link, 'none') %>
 
 <div class="panel-body">
   <h2>ユーザ情報<%= link_to "変更", edit_user_info_path(@user), class: "btn btn-success pull-right" %></h2>

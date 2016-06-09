@@ -35,6 +35,8 @@ module ApplicationHelper
   def make_back_link(page_link = '')
     if page_link.empty?
       user_info_path(@user)
+    elsif page_link == 'none'
+      nil
     else
       page_link
     end

@@ -23,7 +23,11 @@
         <%= yield %>
       </div>
 
-
+      <% if make_back_link(yield(:back_link)) %>
+        <div class="panel-footer">
+          <%= link_to "back", make_back_link(yield(:back_link)), class: "btn btn-default" %>
+        </div>
+      <% end %>
 
     </div>
   </div>

@@ -1,5 +1,3 @@
-<% provide(:back_link, user_categories_path(@user)) %>
-
 <%= bootstrap_form_for([@user,@categories]) do |f| %>
   <%= f.text_field :title %>
   <%= f.select :app_flag, [["表示", true], ["非表示", false]], selected: @categories.app_flag %>

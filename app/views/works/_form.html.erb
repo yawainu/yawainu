@@ -1,5 +1,3 @@
-<% provide(:back_link, user_works_path(@user)) %>
-
 <%= bootstrap_form_for([@user,@work]) do |f| %>
   <%= f.date_field :start_date, placeholder:'YYYY-MM-DD', wrapper: {class: 'form-date'}, append: link_to(content_tag(:i, "", class: "fa fa-calendar"), "#", class: "btn btn-default") %>
   <%= f.date_field :end_date,   placeholder:'YYYY-MM-DD', wrapper: {class: 'form-date'}, append: link_to(content_tag(:i, "", class: "fa fa-calendar"), "#", class: "btn btn-default") %>
